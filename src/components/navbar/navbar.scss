@@ -1,4 +1,9 @@
+@import '../../style.scss';
+
 .navbar{
+    @include themify($themes){
+
+  
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -7,7 +12,8 @@
     border-bottom: 1px solid lightgray;
     position: sticky;
     top: 0;
-    background-color: white;
+    background-color: themed("bg");
+    color: themed("textColor");
 
     .left{
         display: flex;
@@ -18,18 +24,20 @@
         span{
             font-weight: bold;
             font-size: 20px;
-            color: darkblue;
+            color: themed("logo");
         }
         .search{
             display: flex;
             align-items: center;
             gap: 10px;
-            border: 1px solid lightgray;
+            border: 1px solid themed("border");
             border-radius: 5px;
             padding: 5px;
             input{
                 border: none;
                 width: 500px;
+                background-color: transparent;
+                color: themed("textColor")
             }
         }
     }
@@ -53,4 +61,5 @@
             }
         }
     }
+}
 }
